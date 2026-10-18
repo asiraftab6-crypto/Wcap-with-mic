@@ -1,0 +1,10 @@
+.vs
+*.ini
+*.exe
+*.pdb
+*.lib
+*.exp
+shaders
+
+graphify-out/
+wcap-x64-log.txt
