@@ -1,0 +1,23 @@
+name: build-exe
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build (x64)
+        shell: cmd
+        run: build.cmd x64
+
+      - name: Upload exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: wcap-x64
+          path: wcap-x64.exe
